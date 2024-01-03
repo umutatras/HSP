@@ -53,4 +53,17 @@ public class CategoriesService:ICategoriesService
             _unitOfWork.SaveChanges();
         }
     }
+
+    public CategoryListDto Update(CategoryUpdateDto dto)
+    {
+        var category=_unitOfWork.GetRepository<Categories>().Find(dto.Id);
+        if(category == null)
+        {
+            throw new Exception("Category bulunamadı");
+        }
+        category.Name = dto.Name;
+        _unitOfWork.GetRepository<Categories>().Update(category);
+        _unitOfWork.SaveChanges();
+        return new CategoryListDto { Id = category.Id, Name = category.Name, };
+    }
 }

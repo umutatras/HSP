@@ -1,7 +1,5 @@
-﻿using HSP.Core.Dtos;
-using HSP.Core.Dtos.Categories;
+﻿using HSP.Core.Dtos.Categories;
 using HSP.Core.IServices;
-using HSP.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HSP.API.Controllers;
@@ -19,7 +17,7 @@ public class CategoriesController : ControllerBase
     [HttpPost("add")]
     public IActionResult Add(CategoryAddDto dto)
     {
-        var response =  _categoryService.Add(dto);
+        var response = _categoryService.Add(dto);
         return Ok(response);
     }
     [HttpGet("list")]
@@ -31,9 +29,16 @@ public class CategoriesController : ControllerBase
     [HttpDelete("delete/{id}")]
     public IActionResult Remove(int id)
     {
-       _categoryService.Delete(id);
+        _categoryService.Delete(id);
         return NoContent();
-      
+
+    }
+    [HttpPut("update")]
+    public IActionResult Update(CategoryUpdateDto dto)
+    {
+        var response = _categoryService.Update(dto);
+        return Ok(response);
+
     }
 
 }
