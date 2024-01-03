@@ -9,5 +9,4 @@ public class RegisterDto
     public string Name { get; set; }
     public string Surname { get; set; }
     public string UserName { get; set; }
-    public TokenResult? Token { get; set; }
 }

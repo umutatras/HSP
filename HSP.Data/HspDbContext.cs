@@ -8,6 +8,10 @@ namespace HSP.Data;
 
 public class HspDbContext : IdentityDbContext<CustomUser, CustomRole, int>
 {
+    static HspDbContext()
+    {
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+    }
 
     public HspDbContext(DbContextOptions<HspDbContext> dbContextOptions) : base(dbContextOptions)
     {

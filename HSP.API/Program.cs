@@ -5,12 +5,15 @@ using HSP.Data;
 using HSP.Data.UnitOfWork;
 using HSP.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services
+    .AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(builder.Environment.ContentRootPath, "DataProtection")));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -84,7 +87,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseStaticFiles();
+app.UseCors();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -21,4 +21,8 @@
     <ProjectReference Include="..\HSP.Core\HSP.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataProtection\" />
+  </ItemGroup>
+
 </Project>
