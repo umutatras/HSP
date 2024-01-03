@@ -17,8 +17,8 @@ public class UnitOfWork:IUnitOfWork
         return new Repository<T>(_context);
     }
 
-    public void SaveChanges()
+    public int SaveChanges()
     {
-        _context.SaveChanges();
+        return _context.SaveChanges();
     }
 }
