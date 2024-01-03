@@ -24,4 +24,7 @@ public class HspDbContext : IdentityDbContext<CustomUser, CustomRole, int>
     }
 
     public virtual DbSet<CustomUser> CustomUser { get; set; }
+    public virtual DbSet<Categories> Categories { get; set; }
+    public virtual DbSet<Expenses> Expenses { get; set; }
+    public virtual DbSet<Incomes> Incomes { get; set; }
 }
