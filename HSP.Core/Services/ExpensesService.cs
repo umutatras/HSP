@@ -1,18 +1,22 @@
 ﻿using HSP.Core.Dtos.Categories;
 using HSP.Core.Dtos.Expenses;
+using HSP.Core.Hubs;
 using HSP.Core.IServices;
 using HSP.Data.UnitOfWork;
 using HSP.Entities;
+using Microsoft.AspNetCore.SignalR;
 
 namespace HSP.Core.Services;
 
 public class ExpensesService : IExpensesService
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IHubContext<ExpensesHub> _hubContext;
 
-    public ExpensesService(IUnitOfWork unitOfWork)
+    public ExpensesService(IUnitOfWork unitOfWork, IHubContext<ExpensesHub> hubContext)
     {
         _unitOfWork = unitOfWork;
+        _hubContext = hubContext;
     }
 
     public string Add(ExpensesAddDto dto)
@@ -32,6 +36,7 @@ public class ExpensesService : IExpensesService
         });
         if (_unitOfWork.SaveChanges() > 0)
         {
+            _hubContext.Clients.All.SendAsync("ReceiveCovidList", GetExpenses());
             return "Kategori Eklemesi başarılı";
         }
         return "Kategori Eklemesi başarısız";
