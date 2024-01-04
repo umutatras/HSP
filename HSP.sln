@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSP.API", "HSP.API\HSP.API.csproj", "{41F3D8E2-9371-4ABD-A123-BABFD485D76D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSP.API", "HSP.API\HSP.API.csproj", "{41F3D8E2-9371-4ABD-A123-BABFD485D76D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSP.Core", "HSP.Core\HSP.Core.csproj", "{EF7EB3CD-D828-491D-86D5-36CDD2C48851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSP.Core", "HSP.Core\HSP.Core.csproj", "{EF7EB3CD-D828-491D-86D5-36CDD2C48851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSP.Data", "HSP.Data\HSP.Data.csproj", "{0E26EE85-8EC9-402C-A5A2-77E884288357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSP.Data", "HSP.Data\HSP.Data.csproj", "{0E26EE85-8EC9-402C-A5A2-77E884288357}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSP.Entities", "HSP.Entities\HSP.Entities.csproj", "{D284E2C9-3A5F-4C05-AA31-B2E691997D9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSP.Entities", "HSP.Entities\HSP.Entities.csproj", "{D284E2C9-3A5F-4C05-AA31-B2E691997D9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSP.Common", "HSP.Common\HSP.Common.csproj", "{49C80AD5-63D2-4B96-A77B-29DA0271256C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSP.Common", "HSP.Common\HSP.Common.csproj", "{49C80AD5-63D2-4B96-A77B-29DA0271256C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hsp.Api.UnitTest", "Hsp.Api.UnitTest\Hsp.Api.UnitTest.csproj", "{27C027D3-D449-48DB-B98A-1A412407DE5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{49C80AD5-63D2-4B96-A77B-29DA0271256C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49C80AD5-63D2-4B96-A77B-29DA0271256C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49C80AD5-63D2-4B96-A77B-29DA0271256C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C027D3-D449-48DB-B98A-1A412407DE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C027D3-D449-48DB-B98A-1A412407DE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C027D3-D449-48DB-B98A-1A412407DE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C027D3-D449-48DB-B98A-1A412407DE5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

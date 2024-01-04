@@ -1,3 +1,4 @@
+using HSP.Core.Hubs;
 using HSP.Core.IServices;
 using HSP.Core.Jwt;
 using HSP.Core.Services;
@@ -17,6 +18,7 @@ builder.Services
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddSignalR();
 builder.Services.AddDbContext<HspDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -94,7 +96,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseCors();
 app.UseAuthorization();
-
+app.MapHub<ExpensesHub>("/expenses-hub");
 app.MapControllers();
 
 app.Run();
